@@ -1,6 +1,7 @@
 import mongoose, { Schema, Document } from "mongoose";
 
 type User = Document & {
+  id: number;
   name: string;
   email: string;
   gender: string;
@@ -18,6 +19,6 @@ const userSchema: Schema<User> = new Schema(
   { timestamps: true }
 );
 
-const UserModel = mongoose.model<User>("Users", userSchema);
+const User = mongoose.model<User>("Users", userSchema);
 
-export default UserModel;
+export default User;
